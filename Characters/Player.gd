@@ -3,12 +3,10 @@ extends KinematicBody2D
 export(float) var move_speed = 100
 onready var sprite = $Sprite
 
-var velocity: Vector2
-
 func _physics_process(delta):
 	var input_xy = get_player_movement_input()
 	
-	velocity = move_and_slide(input_xy * move_speed)
+	var velocity = move_and_slide(input_xy * move_speed)
 	
 	set_flip_direction(velocity)
 	
