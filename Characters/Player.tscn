@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Art/rpg-pack/chars/gabe/gabe-idle-run.png" type="Texture" id=1]
 [ext_resource path="res://Characters/Player.gd" type="Script" id=2]
@@ -54,25 +54,29 @@ animation = "idle"
 [sub_resource type="AnimationNodeAnimation" id=4]
 animation = "run"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=7]
+[sub_resource type="AnimationNodeStateMachineTransition" id=5]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=8]
+[sub_resource type="AnimationNodeStateMachineTransition" id=6]
 
-[sub_resource type="AnimationNodeStateMachine" id=5]
+[sub_resource type="AnimationNodeStateMachine" id=7]
 states/idle/node = SubResource( 3 )
 states/idle/position = Vector2( 216, 89 )
 states/run/node = SubResource( 4 )
 states/run/position = Vector2( 408, 89 )
-transitions = [ "idle", "run", SubResource( 7 ), "run", "idle", SubResource( 8 ) ]
+transitions = [ "idle", "run", SubResource( 5 ), "run", "idle", SubResource( 6 ) ]
 start_node = "idle"
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=6]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=8]
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 6, 9 )
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 1, 1.03281 )
+position = Vector2( 0, -10 )
+scale = Vector2( 1, 1.02073 )
 texture = ExtResource( 1 )
 hframes = 7
 
@@ -81,7 +85,11 @@ anims/idle = SubResource( 1 )
 anims/run = SubResource( 2 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 5 )
+tree_root = SubResource( 7 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/playback = SubResource( 6 )
+parameters/playback = SubResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -9 )
+shape = SubResource( 9 )
