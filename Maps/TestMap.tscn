@@ -1,15 +1,36 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Characters/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/BarrelRed.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Objects/Inn.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Art/rpg-pack/tiles/generic-rpg-Slice.png" type="Texture" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 494.81, 10 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 25.2906, 394.582 )
 
 [node name="TestMap" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = -224.0
+margin_top = -335.0
+margin_right = 714.0
+margin_bottom = 433.0
+texture = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" parent="YSort" instance=ExtResource( 1 )]
-position = Vector2( 60.7257, 59.3903 )
+position = Vector2( 196.57, 137.545 )
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="YSort/Player"]
+remote_path = NodePath("../../../Camera2D")
 
 [node name="Barrel_Red" parent="YSort" instance=ExtResource( 2 )]
 position = Vector2( 136.994, 144.149 )
@@ -17,5 +38,51 @@ position = Vector2( 136.994, 144.149 )
 [node name="Barrel_Red2" parent="YSort" instance=ExtResource( 2 )]
 position = Vector2( 20.2864, 88.9132 )
 
+[node name="Barrel_Red3" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 46.8754, 158.759 )
+
+[node name="Barrel_Red4" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 234.586, 133.757 )
+
+[node name="Barrel_Red5" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 258, 61.1337 )
+
 [node name="Inn" parent="YSort" instance=ExtResource( 3 )]
 position = Vector2( 108.04, 101.386 )
+
+[node name="Inn2" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 266.383, 219.251 )
+
+[node name="Inn3" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( -40.382, -3.38248 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 196.57, 137.545 )
+current = true
+limit_left = -220
+limit_top = -330
+limit_right = 710
+limit_bottom = 430
+editor_draw_limits = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 249.345, -340.783 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 249.345, 441.278 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 735.835, 60.8541 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -247.044, 58.0257 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -247.044, 58.0257 )
+shape = SubResource( 2 )
