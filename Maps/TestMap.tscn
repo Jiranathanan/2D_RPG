@@ -1,9 +1,16 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Characters/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/BarrelRed.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Objects/Inn.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Art/rpg-pack/tiles/generic-rpg-Slice.png" type="Texture" id=4]
+[ext_resource path="res://Objects/Pond.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Art/rpg-pack/props n decorations/generic-rpg-flower02.png" type="Texture" id=6]
+[ext_resource path="res://Art/rpg-pack/props n decorations/generic-rpg-flower03.png" type="Texture" id=7]
+[ext_resource path="res://Art/rpg-pack/props n decorations/generic-rpg-grass01.png" type="Texture" id=8]
+[ext_resource path="res://Art/rpg-pack/props n decorations/generic-rpg-grass02.png" type="Texture" id=9]
+[ext_resource path="res://Art/rpg-pack/props n decorations/generic-rpg-flower01.png" type="Texture" id=10]
+[ext_resource path="res://Art/rpg-pack/props n decorations/generic-rpg-flowers.png" type="Texture" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 494.81, 10 )
@@ -14,15 +21,122 @@ extents = Vector2( 25.2906, 394.582 )
 [node name="TestMap" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_left = -224.0
-margin_top = -335.0
-margin_right = 714.0
-margin_bottom = 433.0
+margin_left = -233.47
+margin_top = -322.897
+margin_right = 704.53
+margin_bottom = 445.103
 texture = ExtResource( 4 )
 expand = true
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
+
+[node name="BackgroundDetails" type="Node2D" parent="."]
+
+[node name="generic-rpg-grass01" type="Sprite" parent="BackgroundDetails"]
+position = Vector2( 90.1601, 215.938 )
+texture = ExtResource( 8 )
+
+[node name="generic-rpg-grass02" type="Sprite" parent="BackgroundDetails"]
+position = Vector2( 283.442, 252.646 )
+texture = ExtResource( 8 )
+
+[node name="generic-rpg-grass03" type="Sprite" parent="BackgroundDetails"]
+position = Vector2( 161.942, 183.146 )
+texture = ExtResource( 8 )
+
+[node name="generic-rpg-grass04" type="Sprite" parent="BackgroundDetails"]
+position = Vector2( 347.942, 129.646 )
+texture = ExtResource( 8 )
+
+[node name="generic-rpg-grass05" type="Sprite" parent="BackgroundDetails"]
+position = Vector2( 319.942, 60.1461 )
+texture = ExtResource( 8 )
+
+[node name="generic-rpg-grass06" type="Sprite" parent="BackgroundDetails"]
+position = Vector2( 204.942, 51.6461 )
+texture = ExtResource( 8 )
+
+[node name="generic-rpg-grass07" type="Sprite" parent="BackgroundDetails"]
+position = Vector2( 32.4417, 55.1461 )
+texture = ExtResource( 8 )
+
+[node name="generic-rpg-grass17" type="Sprite" parent="BackgroundDetails"]
+position = Vector2( 170.264, -20.2724 )
+texture = ExtResource( 8 )
+
+[node name="generic-rpg-grass08" type="Sprite" parent="BackgroundDetails"]
+position = Vector2( 15.9417, 124.646 )
+texture = ExtResource( 8 )
+
+[node name="generic-rpg-grass18" type="Sprite" parent="BackgroundDetails"]
+position = Vector2( 258.42, -27.232 )
+texture = ExtResource( 8 )
+
+[node name="generic-rpg-grass09" type="Sprite" parent="BackgroundDetails"]
+position = Vector2( 399.442, 89.1461 )
+texture = ExtResource( 8 )
+
+[node name="generic-rpg-grass10" type="Sprite" parent="BackgroundDetails"]
+position = Vector2( 25.5, 209.5 )
+texture = ExtResource( 9 )
+
+[node name="generic-rpg-grass11" type="Sprite" parent="BackgroundDetails"]
+position = Vector2( 267, 83.5 )
+texture = ExtResource( 9 )
+
+[node name="generic-rpg-grass12" type="Sprite" parent="BackgroundDetails"]
+position = Vector2( 326, 181 )
+texture = ExtResource( 9 )
+
+[node name="generic-rpg-grass13" type="Sprite" parent="BackgroundDetails"]
+position = Vector2( 385, 43 )
+texture = ExtResource( 9 )
+
+[node name="generic-rpg-grass14" type="Sprite" parent="BackgroundDetails"]
+position = Vector2( 407, 259.5 )
+texture = ExtResource( 9 )
+
+[node name="generic-rpg-grass15" type="Sprite" parent="BackgroundDetails"]
+position = Vector2( 176.5, 253 )
+texture = ExtResource( 9 )
+
+[node name="generic-rpg-grass16" type="Sprite" parent="BackgroundDetails"]
+position = Vector2( 51.6332, -37.7611 )
+texture = ExtResource( 9 )
+
+[node name="generic-rpg-flower02" type="Sprite" parent="BackgroundDetails"]
+position = Vector2( 304.745, 57.0558 )
+texture = ExtResource( 6 )
+
+[node name="generic-rpg-flower05" type="Sprite" parent="BackgroundDetails"]
+position = Vector2( -27.5041, 30.1167 )
+texture = ExtResource( 6 )
+
+[node name="generic-rpg-flower01" type="Sprite" parent="BackgroundDetails"]
+position = Vector2( 355.161, 115.319 )
+texture = ExtResource( 10 )
+
+[node name="generic-rpg-flower04" type="Sprite" parent="BackgroundDetails"]
+position = Vector2( 71.1777, 125.982 )
+texture = ExtResource( 10 )
+
+[node name="generic-rpg-flower03" type="Sprite" parent="BackgroundDetails"]
+position = Vector2( 206.041, 19.9671 )
+texture = ExtResource( 7 )
+
+[node name="generic-rpg-flowers" type="Sprite" parent="BackgroundDetails"]
+position = Vector2( 198.178, 207.899 )
+texture = ExtResource( 11 )
+
+[node name="generic-rpg-flowers2" type="Sprite" parent="BackgroundDetails"]
+position = Vector2( 25.3186, -15.4709 )
+texture = ExtResource( 11 )
+
+[node name="generic-rpg-flowers3" type="Sprite" parent="BackgroundDetails"]
+position = Vector2( -2.74292, 250.553 )
+texture = ExtResource( 11 )
 
 [node name="YSort" type="YSort" parent="."]
 
@@ -55,6 +169,15 @@ position = Vector2( 266.383, 219.251 )
 
 [node name="Inn3" parent="YSort" instance=ExtResource( 3 )]
 position = Vector2( -40.382, -3.38248 )
+
+[node name="Pond" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 189.011, 109.006 )
+
+[node name="Pond2" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 392.596, 254.252 )
+
+[node name="Pond3" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( -126.874, -12.413 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 196.57, 137.545 )
